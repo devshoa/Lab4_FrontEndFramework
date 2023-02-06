@@ -136,26 +136,42 @@
     </section><!-- End Hero Slider Section -->
 
 
-    <!-- Start Table -->
+    <!-- Form -->
     <div class="container" ng-controller="myctrl">
       <div class="row" style="display: flex; align-items: center; justify-content: center;">
-        <div class="col col-md-5">
-          <div class="mb-3">
-            <label for="" class="form-label">Chiều dài</label>
-            <input type="text" ng-model="length" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Chiều rộng</label>
-            <input type="text" ng-model="width" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <span>Diện tích: {{acreage}}</span><br><br>
-          <span>Chu vi: {{perimeter}}</span><br><br>
-          <button type="button" ng-click="calculate()" class="btn btn-outline-primary" style="display: flex; align-items: center; justify-content: center; margin: 0 auto;">Calculate</button>
+        <div class="col col-md-6" style="padding: 20px; background-color: aqua; border-radius: 20px;">
+          <form>
+            <div class="form-group">
+              <label ng-model="student.fullname" for="exampleInputEmail1">Họ và tên</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Nhập họ và tên">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Ngày sinh</label>
+              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Giới tính</label>
+              <select ng-model="student.gender" class="form-control" id="exampleFormControlSelect1">
+                <option>Nam</option>
+                <option>Nữ</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Điểm</label>
+              <input ng-model="student.mark" type="number" class="form-control" id="exampleInputPassword1" placeholder="Nhập vào điểm">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Học lực</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="{{student.grade}}">
+            </div>
+            <button type="button" ng-click="save()" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
+    </div>
 
-
-      <!--End Table-->
+    <!-- End Form -->
 
   </main><!-- End #main -->
 

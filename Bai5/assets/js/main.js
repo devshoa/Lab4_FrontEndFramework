@@ -153,10 +153,15 @@ var app = angular.module('myApp', []);
 app.controller('myctrl', listStudent);
 
 function listStudent($scope) {
-  $scope.calculate = function () {
-    let a = parseFloat($scope.width);
-    let b = parseFloat($scope.length);
-    $scope.acreage = a * b;
-    $scope.perimeter = (a + b) * 2;
+  $scope.student = {
+  };
+
+  $scope.save = function() {
+    let a = parseFloat($scope.student.mark);
+    if(a < 5) {
+      $scope.student.grade = 'Rớt';
+    } else {
+      $scope.student.grade = 'Đậu';
+    }
   }
 }
