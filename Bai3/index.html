@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Welcome to AngularJS</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!--Main CSS Files -->
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body ng-app="myApp">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1>Nẻo Việt</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#"><i class="bi bi-house-door-fill"></i>Trang chủ</a></li>
+          <li><a href="#"><i class="bi bi-info-circle-fill"></i>Giới thiệu</a></li>
+          <li><a href="#"><i class="bi bi-telephone-outbound-fill"></i>Liên hệ</a></li>
+          <li><a href="#"><i class="bi bi-envelope-exclamation-fill"></i>Góp ý</a></li>
+          <li><a href="#"><i class="bi bi-chat-dots-fill"></i>Hỏi đáp</a></li>
+          <li class="dropdown"><a href="#"><span><i class="bi bi-person-circle"></i>Tài khoản</span><i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Đăng nhập</a></li>
+              <li><a href="#">Quên mật khẩu</a></li>
+              <li><a href="#">Đăng ký thành viên</a></li>
+              <li><a href="#">Đăng xuất</a></li>
+              <li><a href="#">Đổi mật khẩu</a></li>
+              <li><a href="#">Cập nhật hồ sơ</a></li>
+              <li><a href="#">Đơn hàng</a></li>
+              <li><a href="#">Hàng đã mua</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="https://www.facebook.com/" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="https://twitter.com/?lang=vi" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="https://www.instagram.com/" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="#" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Hero Slider Section ======= -->
+    <section id="hero-slider" class="hero-slider">
+      <div class="container-md" data-aos="fade-in">
+        <div class="row">
+          <div class="col-12">
+            <div class="swiper sliderFeaturedPosts">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/img/danang.jpg');">
+
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/img/canada.jpeg');">
+
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/img/us.jpeg');">
+
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/img/cb.jpeg');">
+
+                  </a>
+                </div>
+              </div>
+              <div class="custom-swiper-button-next">
+                <span class="bi-chevron-right"></span>
+              </div>
+              <div class="custom-swiper-button-prev">
+                <span class="bi-chevron-left"></span>
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Hero Slider Section -->
+
+
+    <!-- Start Table -->
+    <div class="content" ng-controller="myctrl">
+
+      <div class="container">
+
+        <div class="card">
+          <div class="card-header">
+            <h2><i class="bi bi-list"></i>Thông tin sinh viên</h2>
+          </div>
+          <div class="table-responsive">
+
+            <table class="table custom-table table-light table-bordered table-hover" style="margin-bottom: 0;">
+              <thead class="text-center">
+                <tr class="table-primary">
+                  <th scope="col" rowspan="2">Họ và tên</th>
+                  <th scope="col" rowspan="2">Ngày sinh</th>
+                  <th scope="col" rowspan="2">Giới tính</th>
+                  <th scope="col" rowspan="2">Điểm trung bình</th>
+                  <th rowspan="2">HÌNH ẢNH</th>
+                </tr>
+
+              </thead>
+              <tbody class="">
+                <tr>
+                  <td>{{students[0].fullName}}</td>
+                  <td>{{students[0].birthday}}</td>
+                  <td>{{students[0].gender}}</td>
+                  <td>{{students[0].mark}}</td>
+                  <td>
+                    <ul class="persons text-center">
+                      <li>
+                        <a href="#">
+                          <img src="../Bai3/assets/img/{{students[0].photo}}" alt="Person" class="img-fluid">
+                        </a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{students[1].fullName}}</td>
+                  <td>{{students[1].birthday}}</td>
+                  <td>{{students[1].gender}}</td>
+                  <td>{{students[1].mark}}</td>
+                  <td>
+                    <ul class="persons text-center">
+                      <li>
+                        <a href="#">
+                          <img src="../Bai3/assets/img/{{students[1].photo}}" alt="Person" class="img-fluid">
+                        </a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{students[2].fullName}}</td>
+                  <td>{{students[2].birthday}}</td>
+                  <td>{{students[2].gender}}</td>
+                  <td>{{students[2].mark}}</td>
+                  <td>
+                    <ul class="persons text-center">
+                      <li>
+                        <a href="#">
+                          <img src="../Bai3/assets/img/{{students[2].photo}}" alt="Person" class="img-fluid">
+                        </a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="footer"
+            style="background-color: rgb(141, 141, 141); height: 46px; line-height: 46px; padding-left: 25px;">
+            Liên hệ phòng đào tạo nếu thông tin bị sai sót
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+    <!--End Table-->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <div class="container">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Tiết diện</font>
+            </font>
+          </h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Nhà</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Đặc trưng</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">định giá</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">câu hỏi thường gặp</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Về</font>
+                </font>
+              </a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h5>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Tiết diện</font>
+            </font>
+          </h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Nhà</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Đặc trưng</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">định giá</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">câu hỏi thường gặp</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Về</font>
+                </font>
+              </a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h5>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Tiết diện</font>
+            </font>
+          </h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Nhà</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Đặc trưng</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">định giá</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">câu hỏi thường gặp</font>
+                </font>
+              </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Về</font>
+                </font>
+              </a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Theo dõi bản tin của chúng tôi</font>
+              </font>
+            </h5>
+            <p>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Thông báo hàng tháng về những gì mới và thú vị từ chúng tôi.
+                </font>
+              </font>
+            </p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Địa chỉ email</font>
+                </font>
+              </label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Địa chỉ email">
+              <button class="btn btn-primary" type="button">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Đặt Tour</font>
+                </font>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">© 2022 Company, Võ Thái Hòa.</font>
+          </font>
+        </p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#twitter"></use>
+              </svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#instagram"></use>
+              </svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#facebook"></use>
+              </svg></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- AngularJS -->
+  <script src="assets/vendor/angular/angular.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
